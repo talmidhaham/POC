@@ -1,0 +1,27 @@
+{
+  "msal": {
+    "auth": {
+      "clientId": "4197e602-4d9a-4386-bbed-b3614e44eae1",
+      "authority": "https://tlvfpdev.b2clogin.com/tlvfpdev.onmicrosoft.com/B2C_1A_TLV5_SIGNIN",
+      "redirectUri": "http://localhost:4200/",
+      "knownAuthorities": ["tlvfpdev.b2clogin.com"]
+    },
+    "cache": {
+      "cacheLocation": "localStorage",
+      "storeAuthStateInCookie": false
+    }
+  },
+  "guard": {
+    "interactionType": "redirect",
+    "authRequest": {
+      "scopes": ["https://tlvfpdev.onmicrosoft.com/196fc7d1-dec8-44d1-a43f-adb39850d4dc/access_as_user openid"]
+    },
+    "loginFailedRoute": "/login-failed" 
+  },
+  "interceptor": {
+    "interactionType": "redirect",
+    "protectedResourceMap": [
+      ["https://localhost:44351/api/todolist", ["https://tlvfpdev.onmicrosoft.com/196fc7d1-dec8-44d1-a43f-adb39850d4dc/access_as_user","openid"]]
+    ]
+  }
+}

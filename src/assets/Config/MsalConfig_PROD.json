@@ -1,0 +1,27 @@
+{
+    "msal": {
+      "auth": {
+        "clientId": "7de6277a-d8f4-4124-b67f-bc50b14b1e5e",
+        "authority": "https://b2ctam.b2clogin.com/b2ctam.onmicrosoft.com/B2C_1A_TLVPRD_SIGNIN",
+        "redirectUri": "http://localhost:4200/",
+        "knownAuthorities": ["b2ctam.b2clogin.com"]
+      },
+      "cache": {
+        "cacheLocation": "localStorage",
+        "storeAuthStateInCookie": false
+      }
+    },
+    "guard": {
+      "interactionType": "redirect",
+      "authRequest": {
+        "scopes": ["https://b2ctam.onmicrosoft.com/22735b20-0c3a-472b-81a5-71155ac75a36/access_as_user openid"]
+      },
+      "loginFailedRoute": "/login-failed" 
+    },
+    "interceptor": {
+      "interactionType": "redirect",
+      "protectedResourceMap": [
+        ["https://localhost:44351/api/todolist", ["https://b2ctam.onmicrosoft.com/22735b20-0c3a-472b-81a5-71155ac75a36/access_as_user","openid"]]
+      ]
+    }
+  }
